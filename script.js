@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // DATA & CONFIGURATION
     // =========================================================================
     const subjects = {
-        ML: { name: "Machine Learning", color: "#00e0ff" },
-        JP: { name: "Java Programming", color: "#ffae00" },
-        CN: { name: "Computer Networks", color: "#a855f7" },
-        CD: { name: "Compiler Design", color: "#f755a8" },
-        WT: { name: "Web Technology", color: "#84cc16" },
-        PD: { name: "Personality Dev.", color: "#e34c26" },
+        ML: { name: "Machine Learning(VR)", color: "#00e0ff" },
+        JP: { name: "Java Programming(GK)", color: "#ffae00" },
+        CN: { name: "Computer Networks(RKS", color: "#a855f7" },
+        CD: { name: "Compiler Design(VR)", color: "#f755a8" },
+        WT: { name: "Web Technology(RKS)", color: "#84cc16" },
+        PD: { name: "Personality Dev(YD).", color: "#e34c26" },
         LIB: { name: "Library Hour", color: "#64748b" },
-        SPORTS: { name: "Sports", color: "#16a34a" },
-        WTTUT: { name: "Web Tech Tutorial", color: "#65a30d" },
+        SPORTS: { name: "Sports(RKS", color: "#16a34a" },
+        WTTUT: { name: "Web Tech Tutorial(RKS)", color: "#65a30d" },
         NPTEL: { name: "NPTEL Course", color: "#ff6347"}
     };
 
