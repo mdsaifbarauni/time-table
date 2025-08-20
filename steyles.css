@@ -1,0 +1,120 @@
+:root {
+    --bg: #0a0d1f;
+    --surface: rgba(30, 41, 59, 0.5);
+    --text: #e9f0ff;
+    --accent1: #00e0ff;
+    --accent2: #ff00f5;
+    --live: #25e994;
+    --radius: 16px;
+    /* This custom property will be set by JS for each card */
+    --subject-color: #ffffff; 
+}
+
+body {
+    margin: 0;
+    padding-top: 80px; /* Make space for the sticky banner */
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* Background Aurora Effect */
+.aurora-background {
+    position: fixed; inset: 0;
+    background: radial-gradient(circle at 20% 30%, var(--accent1), transparent 35%),
+                radial-gradient(circle at 80% 70%, var(--accent2), transparent 40%);
+    filter: blur(120px); opacity: 0.2; z-index: -1;
+    animation: aurora 15s infinite alternate ease-in-out;
+}
+@keyframes aurora {
+    from { transform: translate(0,0) scale(1.2); }
+    to { transform: translate(40px, -30px) scale(1); }
+}
+
+/* --- Smart "Up Next" Banner --- */
+.upcoming-banner {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 1rem 1.5rem;
+    background: rgba(10, 13, 31, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.upcoming-banner .content { display: flex; align-items: center; gap: 1rem; }
+.upcoming-banner .label {
+    background: var(--accent1);
+    color: var(--bg);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.upcoming-banner .subject { font-size: 1.2rem; font-weight: 600; color: white; }
+.upcoming-banner .time { opacity: 0.7; }
+.upcoming-banner .countdown { font-size: 1.2rem; font-weight: 700; color: var(--accent1); }
+
+/* --- Day Panels (Vertical Sections) --- */
+.panel {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.panel h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white;
+}
+
+/* --- Class Cards (Horizontal Scroll) --- */
+.schedule-list {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 2rem 1rem;
+    scroll-snap-type: x mandatory;
+    /* Hide scrollbar for a cleaner look */
+    scrollbar-width: none; /* Firefox */
+}
+.schedule-list::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
+
+.class-card {
+    min-width: 280px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: 4px solid var(--subject-color); /* Color-coded top border */
+}
+.class-card h3 { margin: 0 0 0.5rem 0; color: white; }
+.class-card p { margin: 0.2rem 0; opacity: 0.8; }
+
+.class-card.is-live {
+    border-color: var(--live);
+    box-shadow: 0 0 25px rgba(37, 233, 148, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 15px rgba(37, 233, 148, 0.2); }
+    50% { box-shadow: 0 0 30px rgba(37, 233, 148, 0.5); }
+    100% { box-shadow: 0 0 15px rgba(37, 233, 148, 0.2); }
+}
+
+@media (max-width: 768px) {
+    body { padding-top: 100px; }
+    .upcoming-banner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .panel { padding: 3rem 1rem; }
+    .panel h2 { font-size: 2rem; }
+}
