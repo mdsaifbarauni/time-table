@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         SPORTS: { name: "Sports(RKS", color: "#16a34a" },
         WTTUT: { name: "Web Tech Tutorial(RKS)", color: "#65a30d" },
         NPTEL: { name: "NPTEL Course", color: "#ff6347"}
-        PYTHON: { name: "PYTHON LAB(GK)", color: "#ffffff"}
-
     };
 
     const timetableData = {
@@ -22,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tuesday: [{ time: "9:50 - 10:40", subjectKey: "ML", type: "Lecture" }, { time: "10:40 - 11:30", subjectKey: "JP", type: "Lecture" }, { time: "11:30 - 13:10", subjectKey: "CN", type: "Lab" }, { time: "13:40 - 14:30", subjectKey: "WT", type: "Lecture" }, { time: "14:30 - 15:20", subjectKey: "CD", type: "Lecture" }],
         wednesday: [{ time: "9:50 - 10:40", subjectKey: "ML", type: "Lecture" }, { time: "10:40 - 11:30", subjectKey: "LIB", type: "Self-Study" }, { time: "11:30 - 12:20", subjectKey: "WT", type: "Lecture" }, { time: "12:20 - 13:10", subjectKey: "CN", type: "Lecture" }, { time: "13:40 - 15:20", subjectKey: "CD", type: "Lab" }],
         thursday: [{ time: "9:50 - 10:40", subjectKey: "ML", type: "Lecture" }, { time: "10:40 - 11:30", subjectKey: "JP", type: "Lecture" }, { time: "11:30 - 12:20", subjectKey: "CN", type: "Lecture" }, { time: "12:20 - 13:10", subjectKey: "CD", type: "Lecture" }, { time: "13:40 - 15:20", subjectKey: "SPORTS", type: "Activity" }],
-        friday: [{ time: "9:50 - 11:30", subjectKey: "PYTHON", type: "Lab" }, { time: "11:30 - 12:20", subjectKey: "CN", type: "Lecture" }, { time: "12:20 - 13:10", subjectKey: "PD", type: "Class" }, { time: "13:40 - 14:30", subjectKey: "WT", type: "Lecture" }, { time: "14:30 - 15:20", subjectKey: "JP", type: "Lecture" }],
+        friday: [{ time: "9:50 - 11:30", subjectKey: "JP", type: "Lab" }, { time: "11:30 - 12:20", subjectKey: "CN", type: "Lecture" }, { time: "12:20 - 13:10", subjectKey: "PD", type: "Class" }, { time: "13:40 - 14:30", subjectKey: "WT", type: "Lecture" }, { time: "14:30 - 15:20", subjectKey: "JP", type: "Lecture" }],
         saturday: [{ time: "9:50 - 10:40", subjectKey: "CD", type: "Tutorial" }, { time: "10:40 - 11:30", subjectKey: "WT", type: "Tutorial" }, { time: "11:30 - 12:20", subjectKey: "NPTEL", type: "Tutorial" }, { time: "12:20 - 13:10", subjectKey: "NPTEL", type: "Tutorial" }, { time: "13:40 - 14:30", subjectKey: "WTTUT", type: "Tutorial" }, { time: "14:30 - 15:20", subjectKey: "WTTUT", type: "Tutorial" }],
         sunday: []
     };
@@ -164,4 +162,5 @@ document.addEventListener("DOMContentLoaded", () => {
         clockElement.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     }, 1000);
 });
+
 
